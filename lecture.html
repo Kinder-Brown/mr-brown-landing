@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4월 특강 — 그로잉키즈 영어체육 P.E</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lecture.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════
+         포스터 팝업 (진입 시 자동 표시)
+    ══════════════════════════════ -->
+    <div id="posterModal" class="poster-modal">
+        <div class="poster-modal-box">
+            <img src="images/april_lecture_poster.png"
+                 alt="4월 특강 포스터"
+                 class="poster-img"
+                 draggable="false"
+                 oncontextmenu="return false;">
+            <div class="poster-modal-actions">
+                <button class="poster-btn-apply" onclick="closePosterAndApply()">
+                    <i class="fas fa-pen-to-square"></i> 신청서 작성하기
+                </button>
+                <button class="poster-btn-close" onclick="closePoster()">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         메인 콘텐츠
+    ══════════════════════════════ -->
+    <div class="page-wrap">
+
+        <!-- 상단 뒤로가기 -->
+        <header class="top-nav">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 돌아가기
+            </a>
+            <span class="top-title">그로잉키즈</span>
+            <div style="width:60px;"></div>
+        </header>
+
+        <!-- 포스터 섹션 -->
+        <section class="poster-section">
+            <img src="images/april_lecture_poster.png"
+                 alt="4월 특강 포스터"
+                 class="poster-full"
+                 draggable="false"
+                 oncontextmenu="return false;">
+        </section>
+
+        <!-- 특강 요약 정보 -->
+        <section class="info-card">
+            <h2 class="info-card-title">📋 특강 안내</h2>
+            <ul class="info-detail-list">
+                <li>
+                    <span class="detail-label"><i class="fas fa-users"></i> 대상</span>
+                    <span class="detail-val">
+                        1부 — 16:00~16:50 | 초등 1~2학년 (6명)<br>
+                        2부 — 17:00~17:50 | 유아 6~7세 (6명)
+                    </span>
+                </li>
+                <li>
+                    <span class="detail-label"><i class="fas fa-calendar"></i> 일정</span>
+                    <span class="detail-val">04.16 ~ 05.07 (매주 목요일, 총 4회)</span>
+                </li>
+                <li>
+                    <span class="detail-label"><i class="fas fa-location-dot"></i> 장소</span>
+                    <span class="detail-val">동탄역 그란비아스타 F3 블랭크(BLANK)</span>
+                </li>
+                <li>
+                    <span class="detail-label"><i class="fas fa-won-sign"></i> 교육비</span>
+                    <span class="detail-val">
+                        <span class="price-early">얼리버드 <span class="price-date">(~4/14)</span></span>
+                        <span class="price-wrap">
+                            <span class="price-original">150,000원</span>
+                            <span class="price-final">120,000원</span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 신청 버튼 -->
+        <button class="apply-btn" onclick="openApplyModal()">
+            <i class="fas fa-pen-to-square"></i> 특강 신청하기
+        </button>
+
+        <!-- 환불 규정 아코디언 -->
+        <section class="refund-section">
+            <button class="refund-toggle" onclick="toggleRefund()">
+                <span><i class="fas fa-circle-info"></i> 환불 규정 안내</span>
+                <i class="fas fa-chevron-down refund-chevron" id="refundChevron"></i>
+            </button>
+            <div class="refund-body" id="refundBody">
+                <ul class="refund-list">
+                    <li><strong>수업 시작 2일 전까지</strong> — 전액 환불</li>
+                    <li><strong>수업 시작 2일 ~ 전날</strong> — 교육비의 50% 환불</li>
+                    <li><strong>수업 시작 당일 이후</strong> — 환불 불가</li>
+                    <li><strong>총 수업의 1/3 경과 전</strong> — 잔여 수업분의 2/3 환불</li>
+                    <li><strong>총 수업의 1/2 경과 전</strong> — 잔여 수업분의 1/2 환불</li>
+                    <li><strong>총 수업의 1/2 경과 후</strong> — 환불 불가</li>
+                    <li class="refund-note">※ 천재지변·강사 사정 등 불가피한 사유로 인한 폐강 시 전액 환불</li>
+                    <li class="refund-note">※ 환불 신청 : 인스타그램 DM 또는 카카오 오픈채팅으로 문의</li>
+                </ul>
+            </div>
+        </section>
+
+    </div><!-- /.page-wrap -->
+
+
+    <!-- ══════════════════════════════
+         특강 신청서 모달
+    ══════════════════════════════ -->
+    <div id="applyModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-box">
+
+            <!-- 완료 화면 (제출 후) -->
+            <div id="successView" class="success-view" style="display:none;">
+                <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+                <h3 class="success-title">신청이 완료되었습니다!</h3>
+                <p class="success-msg">확인 후 개별 연락 드리겠습니다. 😊</p>
+                <button class="success-close-btn" onclick="closeApplyModal()">닫기</button>
+            </div>
+
+            <!-- 신청서 폼 -->
+            <div id="formView">
+                <div class="modal-head">
+                    <h2 class="modal-title"><i class="fas fa-star"></i> 4월 특강 신청서</h2>
+                    <button class="modal-close" onclick="closeApplyModal()" aria-label="닫기">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="applyForm" onsubmit="submitForm(event)">
+
+                        <!-- 수업 선택 -->
+                        <div class="form-group">
+                            <label class="form-label required">수업 선택</label>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" name="class" value="1부 (초등 1~2학년 / 16:00~16:50)" required>
+                                    <span class="radio-content">
+                                        <strong>1부</strong>
+                                        <small>초등 1~2학년 | 16:00~16:50</small>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="class" value="2부 (유아 6~7세 / 17:00~17:50)">
+                                    <span class="radio-content">
+                                        <strong>2부</strong>
+                                        <small>유아 6~7세 | 17:00~17:50</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 아이 이름 -->
+                        <div class="form-group">
+                            <label class="form-label required" for="childName">아이 이름</label>
+                            <input type="text" id="childName" name="childName"
+                                   class="form-input" placeholder="아이 이름을 입력해주세요" required>
+                        </div>
+
+                        <!-- 아이 나이/학년 -->
+                        <div class="form-group">
+                            <label class="form-label required" for="childAge">나이 / 학년</label>
+                            <input type="text" id="childAge" name="childAge"
+                                   class="form-input" placeholder="예) 7세 / 초등 1학년" required>
+                        </div>
+
+                        <!-- 보호자 이름 -->
+                        <div class="form-group">
+                            <label class="form-label required" for="parentName">보호자 이름</label>
+                            <input type="text" id="parentName" name="parentName"
+                                   class="form-input" placeholder="보호자 이름을 입력해주세요" required>
+                        </div>
+
+                        <!-- 연락처 -->
+                        <div class="form-group">
+                            <label class="form-label required" for="phone">연락처</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="form-input" placeholder="010-0000-0000" required>
+                        </div>
+
+                        <!-- 교육비 안내 -->
+                        <div class="form-group">
+                            <label class="form-label">교육비 납부 안내</label>
+                            <div class="payment-box">
+                                <div class="payment-row">
+                                    <span class="payment-icon"><i class="fas fa-building-columns"></i></span>
+                                    <span class="payment-info">
+                                        <strong>농협 351-0253-2746-73</strong><br>
+                                        예금주 : 박현명
+                                    </span>
+                                </div>
+                                <div class="payment-price-row">
+                                    <span class="payment-label">얼리버드 <span class="earlybird-date">(~4/14)</span></span>
+                                    <span class="payment-price-wrap">
+                                        <span class="p-original">150,000원</span>
+                                        <span class="p-arrow">→</span>
+                                        <span class="p-final">120,000원</span>
+                                    </span>
+                                </div>
+                                <p class="payment-note">※ 신청서 제출 후 위 계좌로 입금해 주시면 등록이 완료됩니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 입금자명 -->
+                        <div class="form-group">
+                            <label class="form-label required" for="depositor">입금자명</label>
+                            <input type="text" id="depositor" name="depositor"
+                                   class="form-input" placeholder="입금 시 사용할 이름을 입력해주세요" required>
+                        </div>
+
+                        <!-- 문의사항 -->
+                        <div class="form-group">
+                            <label class="form-label" for="message">문의사항 <span class="optional">(선택)</span></label>
+                            <textarea id="message" name="message"
+                                      class="form-textarea"
+                                      placeholder="문의사항이 있으시면 자유롭게 입력해주세요."></textarea>
+                        </div>
+
+                        <!-- 환불 동의 -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeRefund" required>
+                                <span class="checkbox-text">환불 규정을 확인하였으며 이에 동의합니다. <span class="required-mark">*</span></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> 신청 완료
+                        </button>
+
+                    </form>
+                </div>
+            </div><!-- /#formView -->
+
+        </div>
+    </div><!-- /#applyModal -->
+
+    <script src="js/lecture.js"></script>
+</body>
+</html>

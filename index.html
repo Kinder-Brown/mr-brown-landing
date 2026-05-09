@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="브라운쌤 — 3년간 1,500명+ 아이들을 가르친 영어체육강사">
+    <meta property="og:title" content="브라운쌤 — 그로잉키즈 영어체육">
+    <meta property="og:description" content="움직임을 통해 아이들과 교감하고 소통합니다.">
+    <meta property="og:image" content="images/brown_profile.png">
+    <title>브라운쌤 — 그로잉키즈</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="page-wrap">
+
+        <!-- ① 프로필 카드 -->
+        <section class="profile-card">
+            <div class="avatar-wrap">
+                <img src="images/brown_profile.png" alt="브라운쌤 프로필" class="avatar-img">
+            </div>
+
+            <h1 class="profile-name">브라운쌤</h1>
+            <p class="profile-handle">Mr. Brown</p>
+
+            <span class="profile-badge">
+                ✨ 3년간 1,500명+ 아이들을 가르친 영어체육강사
+            </span>
+
+            <p class="profile-bio">
+                <strong>움직임을 통해 아이들과 교감하고 소통합니다.</strong>
+            </p>
+        </section>
+
+        <!-- ② 소속 카드 -->
+        <div class="affil-card">
+            <div class="affil-item">
+                <div class="affil-icon">
+                    <img src="images/growing_kids_logo.png" alt="그로잉키즈">
+                </div>
+                <span class="affil-text">그로잉키즈 l 평택/동탄 영어체육 대표 선생님</span>
+            </div>
+            <div class="affil-item">
+                <div class="affil-icon">
+                    <img src="images/brown_brain_logo.png" alt="브라운">
+                </div>
+                <span class="affil-text">심리학 전공자 출신 유아체육 선생님</span>
+            </div>
+            <div class="affil-item">
+                <div class="affil-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="affil-text">졸업논문 및 전공 : 인지/발달/주의&amp;반응선택</span>
+            </div>
+        </div>
+
+        <!-- ③ 서비스 태그 -->
+        <div class="tags-row">
+            <span class="tag-pill">
+                <i class="fas fa-building"></i> 기관수업
+            </span>
+            <span class="tag-pill">
+                <i class="fas fa-house"></i> 방문체육
+            </span>
+            <span class="tag-pill">
+                <i class="fas fa-store"></i> 문화센터
+            </span>
+        </div>
+
+        <!-- ④ 링크 목록 -->
+
+        <!-- 인스타그램 -->
+        <a href="https://www.instagram.com/kinder.p.e_brown/"
+           target="_blank" rel="noopener"
+           class="link-card">
+            <div class="link-icon-wrap">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="link-text">
+                <span class="link-label">Instagram</span>
+                <span class="link-sub">@kinder.p.e_brown</span>
+            </div>
+            <i class="fas fa-chevron-right link-arrow"></i>
+        </a>
+
+        <!-- 브라운쌤 소개페이지 (네이비 아웃라인) -->
+        <a href="https://kinderbrown.netlify.app"
+           target="_blank" rel="noopener"
+           class="link-card link-card--profile">
+            <div class="link-icon-wrap">
+                <i class="fas fa-id-card"></i>
+            </div>
+            <div class="link-text">
+                <span class="link-label">브라운쌤 소개 페이지</span>
+                <span class="link-sub">브라운쌤이 궁금하다면!</span>
+            </div>
+            <i class="fas fa-chevron-right link-arrow"></i>
+        </a>
+
+        <!-- 그로잉키즈 -->
+        <a href="https://www.growengkids.com/"
+           target="_blank" rel="noopener"
+           class="link-card">
+            <div class="link-icon-wrap">
+                <i class="fas fa-globe"></i>
+            </div>
+            <div class="link-text">
+                <span class="link-label">그로잉키즈</span>
+                <span class="link-sub">홈페이지 방문하기</span>
+            </div>
+            <i class="fas fa-chevron-right link-arrow"></i>
+        </a>
+
+        <!-- 4월 특강 (그린) -->
+        <a href="lecture.html" class="link-card link-card--lecture">
+            <div class="link-icon-wrap">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="link-text">
+                <span class="link-label">정규 수업</span>
+                <span class="link-sub">(동탄) 그로잉키즈 영어체육 P.E 특강 신청</span>
+            </div>
+            <span class="new-badge">NEW</span>
+            <i class="fas fa-chevron-right link-arrow"></i>
+        </a>
+
+        <!-- 수업 신청 (네이비) -->
+        <button onclick="openModal()" class="link-card link-card--apply">
+            <div class="link-icon-wrap">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="link-text">
+                <span class="link-label">수업 신청</span>
+                <span class="link-sub">수업 관련 상담 및 문의</span>
+            </div>
+            <i class="fas fa-chevron-right link-arrow"></i>
+        </button>
+
+        <!-- ⑤ 푸터 -->
+        <footer class="profile-footer"></footer>
+
+    </div>
+
+    <!-- 수업 신청 모달 -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-topbar"></div>
+            <div class="modal-handle"></div>
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <span class="modal-title">수업 신청 &amp; 문의</span>
+                    <button class="modal-close" aria-label="닫기">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="modal-info-box">
+                    수업 장소 및 수업 일정 등<br>
+                    자세한 상담을 원하신다면,<br>
+                    <strong>인스타그램 DM</strong> 혹은<br>
+                    <strong>카카오톡 오픈채팅방</strong>을 통해<br>
+                    문의 남겨주시면 답장 드리겠습니다 :)
+                </div>
+
+                <div class="modal-btns">
+                    <a href="https://www.instagram.com/kinder.p.e_brown/"
+                       target="_blank" rel="noopener"
+                       class="modal-btn modal-btn--insta">
+                        <i class="fab fa-instagram"></i> 인스타 DM
+                    </a>
+                    <a href="https://open.kakao.com/me/KinderBrown"
+                       target="_blank" rel="noopener"
+                       class="modal-btn modal-btn--kakao">
+                        <i class="fas fa-comment"></i> 카카오 오픈채팅
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
