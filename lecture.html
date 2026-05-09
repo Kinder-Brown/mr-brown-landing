@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 <body>
 
     <!-- Netlify Forms 감지용 숨김 폼 -->
-    <form name="수업신청" data-netlify="true" hidden>
+    <form name="class-apply" data-netlify="true" hidden>
         <input name="수업선택">
         <input name="아이이름">
         <input name="나이학년">
@@ -191,10 +191,10 @@
                 </div>
                 <div class="modal-body">
                     <form id="applyForm"
-                          name="수업신청"
+                          name="class-apply"
                           data-netlify="true"
                           onsubmit="submitForm(event)">
-                        <input type="hidden" name="form-name" value="수업신청">
+                        <input type="hidden" name="form-name" value="class-apply">
 
                         <!-- 수업 선택 -->
                         <div class="form-group">
