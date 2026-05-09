@@ -158,6 +158,107 @@ body {
     padding-top: 3px;
 }
 
+/* ════════════════════
+   시간표 시각화
+════════════════════ */
+.schedule-li {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.schedule-li > .detail-label {
+    align-self: flex-start;
+}
+
+.schedule-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.schedule-day {
+    background: var(--bg);
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.day-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.day-thu {
+    background: #1E2D40;
+    color: #ffffff;
+}
+
+.day-sat {
+    background: var(--orange);
+    color: #ffffff;
+}
+
+.time-slot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+}
+
+.slot-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--white);
+    background: var(--t2);
+    border-radius: 6px;
+    padding: 2px 8px;
+    flex-shrink: 0;
+    min-width: 28px;
+    text-align: center;
+}
+
+.slot-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.slot-time {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--t1);
+}
+
+.slot-target {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--t3);
+}
+
+/* 폼 수업 선택 그룹 헤더 */
+.class-group-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--navy);
+    background: rgba(30,45,64,0.07);
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-bottom: 6px;
+}
+
+.class-group-header i { color: var(--orange); }
+
 /* 가격 표시 */
 .price-early {
     display: block;

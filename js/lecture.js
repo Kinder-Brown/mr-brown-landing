@@ -86,7 +86,7 @@ function toggleRefund() {
 }
 
 /* ════════════════════
-   폼 제출 + DB 저장
+   폼 제출 → Netlify Forms
 ════════════════════ */
 function submitForm(e) {
     e.preventDefault();
@@ -100,45 +100,17 @@ function submitForm(e) {
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
 
-    /* 폼 데이터 수집 */
-    var classType  = form.querySelector('input[name="class"]:checked');
-    var childName  = form.querySelector('#childName').value.trim();
-    var childAge   = form.querySelector('#childAge').value.trim();
-    var parentName = form.querySelector('#parentName').value.trim();
-    var phone      = form.querySelector('#phone').value.trim();
-    var depositor  = form.querySelector('#depositor').value.trim();
-    var memo       = form.querySelector('#message').value.trim();
-
-    /* 현재 시각 (한국 시간) */
-    var now = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
-
-    var payload = {
-        submitted_at : now,
-        class_type   : classType ? classType.value : '-',
-        child_name   : childName,
-        child_age    : childAge,
-        parent_name  : parentName,
-        phone        : phone,
-        depositor    : depositor,
-        memo         : memo || '-'
-    };
-
-    /* RESTful Table API로 저장 */
-    fetch('tables/lecture_applications', {
+    fetch('/', {
         method  : 'POST',
-        headers : { 'Content-Type': 'application/json' },
-        body    : JSON.stringify(payload)
+        headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body    : new URLSearchParams(new FormData(form)).toString()
     })
     .then(function (res) {
-        if (!res.ok) throw new Error('저장 실패: ' + res.status);
-        return res.json();
-    })
-    .then(function () {
+        if (!res.ok) throw new Error('제출 실패: ' + res.status);
         showSuccess();
     })
     .catch(function (err) {
-        console.error('신청서 저장 오류:', err);
-        /* 저장 실패해도 사용자에겐 완료 화면 표시 (UX 보호) */
+        console.error('신청서 오류:', err);
         showSuccess();
     })
     .finally(function () {
