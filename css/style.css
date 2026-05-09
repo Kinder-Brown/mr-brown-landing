@@ -200,6 +200,11 @@ body::before {
     object-fit: contain;
     padding: 4px;
 }
+.affil-icon--fill img {
+    padding: 0;
+    object-fit: cover;
+    border-radius: 9px;
+}
 .affil-text {
     font-size: 0.88rem;
     font-weight: 600;
